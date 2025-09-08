@@ -1,4 +1,4 @@
-# Measures Converter Flutter App
+# Unit Converter Flutter App
 
 A Flutter mobile application for converting between different units of measurement.
 
@@ -13,7 +13,7 @@ A Flutter mobile application for converting between different units of measureme
 lib/
 ├── main.dart
 ├── screens/
-│   └── converter_screen.dart
+│   └── conversion_screen.dart
 └── utils/
     └── converter.dart
 ```
@@ -63,7 +63,14 @@ open -a Simulator
 
 ### Step 8: Run App
 ```bash
-flutter run -d ios
+# Check available devices
+flutter devices
+
+# Run on specific iOS Simulator (use device ID from above)
+flutter run -d [DEVICE_ID]
+
+# Example:
+flutter run -d 17D214BD-7AEE-4A6B-961B-840CA272D03D
 ```
 
 ## Requirements

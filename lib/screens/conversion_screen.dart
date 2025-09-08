@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import '../utils/converter.dart';
 
 /// Main screen widget that provides the user interface for unit conversions
-class ConverterScreen extends StatefulWidget {
-  const ConverterScreen({super.key});
+
+class ConversionScreen extends StatefulWidget {
+  const ConversionScreen({super.key});
 
   @override
-  State<ConverterScreen> createState() => _ConverterScreenState();
+  State<ConversionScreen> createState() => _ConversionScreenState();
 }
 
-class _ConverterScreenState extends State<ConverterScreen> {
+class _ConversionScreenState extends State<ConversionScreen> {
   final TextEditingController _valueController = TextEditingController();
   String _fromUnit = 'meters';
   String _toUnit = 'feet';
@@ -36,7 +37,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
 
     try {
       final value = double.parse(_valueController.text);
-      final convertedValue = Converter.convert(value, _fromUnit, _toUnit);
+      final convertedValue = UnitConverter.convert(value, _fromUnit, _toUnit);
       setState(() {
         _result = '${value.toStringAsFixed(1)} $_fromUnit are ${convertedValue.toStringAsFixed(3)} $_toUnit';
       });
@@ -61,7 +62,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Measures Converter'),
+        title: const Text('Unit Converter'),
         actions: [
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert),

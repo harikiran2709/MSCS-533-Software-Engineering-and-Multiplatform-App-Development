@@ -1,5 +1,5 @@
 /// Utility class containing conversion logic for different unit types
-class Converter {
+class UnitConverter {
   /// Converts a value from one unit to another unit of the same category
   static double convert(double value, String from, String to) {
     // Distance conversion factors - all values relative to meters

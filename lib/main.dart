@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'screens/converter_screen.dart';
+import 'screens/conversion_screen.dart';
 
-/// Main entry point for the Measures Converter Flutter application
+/// Main entry point for the Unit Converter Flutter application
 /// This application provides unit conversion functionality for distance, weight, and temperature
 void main() {
-  runApp(const MeasuresConverterApp());
+  runApp(const UnitConverterApp());
 }
 
 /// Root widget that configures the MaterialApp for the entire application
 /// Sets up the theme, app bar styling, and navigation structure
-class MeasuresConverterApp extends StatelessWidget {
-  const MeasuresConverterApp({super.key});
+class UnitConverterApp extends StatelessWidget {
+  const UnitConverterApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Measures Converter',
+      title: 'Unit Converter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -24,7 +24,7 @@ class MeasuresConverterApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: const ConverterScreen(),
+      home: const ConversionScreen(),
     );
   }
 }
