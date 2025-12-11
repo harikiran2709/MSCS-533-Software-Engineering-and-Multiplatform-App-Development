@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             x:Class="LocationTracker.MainPage"
+             Title="Location Tracker"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="*, Auto">
+        <!-- Map displaying location history as heat map -->
+        <maps:Map x:Name="map"
+                  Grid.Row="0"
+                  IsShowingUser="True"
+                  MapType="Street" />
+
+        <!-- Control buttons -->
+        <VerticalStackLayout Grid.Row="1"
+                             Spacing="10"
+                             Padding="15"
+                             BackgroundColor="#F5F5F5">
+            <Label Text="Location Tracker" 
+                   FontSize="16" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black" />
+            
+            <Label x:Name="lblStatus"
+                   Text="Status: Stopped"
+                   FontSize="14"
+                   TextColor="#666666"
+                   HorizontalOptions="Center" />
+            
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Start Tracking"
+                        Clicked="OnStartTrackingClicked"
+                        x:Name="btnStart"
+                        Padding="20,12" />
+                <Button Text="Stop Tracking"
+                        Clicked="OnStopTrackingClicked"
+                        IsEnabled="False"
+                        x:Name="btnStop"
+                        Padding="20,12" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,6 @@
+bin/
+obj/
+dotnet/
+.DS_Store
+*.user
+*.lock.json
